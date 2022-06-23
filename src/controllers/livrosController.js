@@ -10,19 +10,47 @@ class LivroController {
       });
   };
 
+  static listarLivroPorEditora = (req, res) => {
+    const editora = req.query.editora;
+
+    livros.find({ editora: editora }, {}, (err, livro) => {
+      if (err) {
+        res
+          .status(400)
+          .send({ message: `${err.message} - livro não localizado.` });
+      } else {
+        res.status(200).send(livro);
+      }
+    });
+  };
+
+  static listarLivroPorTitulo = (req, res) => {
+    const titulo = req.query.titulo;
+
+    livros.find({ titulo: titulo }, {}, (err, livro) => {
+      if (err) {
+        res
+          .status(400)
+          .send({ message: `${err.message} - livro não localizado.` });
+      } else {
+        res.status(200).send(livro);
+      }
+    });
+  };
+
   static listarLivroPorId = (req, res) => {
     const id = req.params.id;
 
     livros
       .findById(id)
       .populate("autor", "nome")
-      .exec((err, livros) => {
+      .exec((err, livro) => {
         if (err) {
           res
             .status(400)
             .send({ message: `${err.message} - Id do livro não localizado.` });
         } else {
-          res.status(200).send(livros);
+          res.status(200).send(livro);
         }
       });
   };
