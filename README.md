@@ -1,8 +1,8 @@
-### first-api-rest
+# first-api-rest
 
 ## Criando uma API rest utilizando Node express e MongoDB
 
-# Métodos disponíveis no livroController:
+### Métodos disponíveis no livroController:
 
 GET - Listar todos os livros => ROTA: http://localhost:3000/livros
 
@@ -18,7 +18,7 @@ PUT - Atualizar um livro pelo ID => ROTA: http://localhost:3000/livros //formato
 
 DELETE - Deletar um livro pelo ID => ROTA: http://localhost:3000/livros/(id)
 
-# Métodos disponiveis no autoresController:
+### Métodos disponiveis no autoresController:
 
 GET - Listar todos os autores => ROTA: http://localhost:3000/autores
 
